@@ -32,9 +32,9 @@ const Home = () => {
     <div className={styles.homeContainer}>
       <div className={styles.backgroundImage}></div>
       <div className={styles.content}>
-        <h1 className={styles.title}>ChatBot</h1>
-        <p className={styles.description}>Uma ferramenta de ensino de programação</p>
-        <Link to="/chat" className={styles.startButton}>Iniciar</Link>
+        <h1 className={styles.title}>Today Nasa</h1>
+        <p className={styles.description}>Atualiazações todo dia de imagens da espaciais</p>
+        <Link to="/chat" className={styles.startButton}>Ir para imagem do dia</Link>
       </div>
       <div className={styles.exampleContainer}>
         <h1 className={styles.titleExem}>Imagem do dia</h1>
@@ -52,6 +52,7 @@ const Home = () => {
               className={styles.startButton}
               download="imagem-do-dia.jpg"
               href={apodData && apodData.hdurl}
+              style={{ display: apodData ? 'block' : 'none', marginTop: '30px' }}
             >
               View Source
             </a>
