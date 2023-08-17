@@ -102,6 +102,9 @@
 .exampleDescription {
   font-size: 1rem;
   color: gray;
+  background-color: #e3e6e4;
+  border-radius: 20px;
+  padding: 15px;
 }
 
 .backgroundSession {
