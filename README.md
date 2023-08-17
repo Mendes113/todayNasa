@@ -12,8 +12,14 @@ This projects aims to undestand the use of APIs, in this context i've used the N
 
 ### Open the Project
 - open the project directory
+  
+```sh
 - cd TodayNasa
-- npm install (to install all the dependecies) 
+ ```
+```sh
+- npm install (to install all the dependecies)
+ ```
+```sh
 - run deploy, use npm run dev
-
+ ```
 <img src="./pageNasa.png">
