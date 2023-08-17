@@ -3,7 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #edf3f6;
+  background-color: #080f45;
+  color: antiquewhite;
+  
 }
   
 .footerContent {
@@ -13,6 +15,7 @@
 .footerContent h4 {
   font-size: 20px;
   font-weight: lighter;
+  color: antiquewhite;
 }
 
 .navbar {
@@ -21,11 +24,13 @@
   align-items: center;    
   padding: .5em 2em;
   margin-bottom: 0;
+  color: antiquewhite;
 }
 
 .brand {
   font-size: 1.5em;
   margin-left: 80px;
+  color: antiquewhite;
 }
 
 .brand span {
@@ -36,19 +41,22 @@
 .links_list {
   display: flex;
   list-style: none;
+  color: antiquewhite;
 }
 
 .links_list {
   margin-right: 1em;
+  color: antiquewhite;
 }
 
 .links_list li a {
   padding: .4em .6em;
   border-radius: 5px;
+  color: antiquewhite;  
 }
 
 .active {
-  background-color: black;
-  color: white;
+  background-color: #080f45;
+  color: rgb(0, 0, 0);
 }
   

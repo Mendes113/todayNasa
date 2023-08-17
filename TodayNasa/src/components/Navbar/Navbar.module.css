@@ -5,11 +5,14 @@
     align-items: left;    
     padding: .5em 2em;
     margin-bottom: 0;
+     background-color:  #080f45;
+     color: antiquewhite;  
 }
 
 .brand {
     font-size: 1.5em;
     margin-left: 80px;
+    color: antiquewhite;  
 }
 
 .brand span {
@@ -29,6 +32,7 @@
 .links_list li a {
     padding: .4em .6em;
     border-radius: 5px;
+    color: antiquewhite;  
 }
 
 .links_list_right {
@@ -54,6 +58,6 @@
 }
 
 .active {
-    background-color: black;
+    background-color: #080f45;
     color: white;
 }
