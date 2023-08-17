@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.navbar}>
         <NavLink to="/" className={styles.brand}>
-          Chat <span>Bot</span>
+          Today <span>Nasa</span>
         </NavLink>
         <ul className={styles.links_list}>
           <li>
@@ -39,8 +39,8 @@ const Footer = () => {
         </ul>
       </div>
       <div className={styles.footerContent}>
-        <h4>Nasatoday, imagens novas disponibilizadas pela NASA</h4>
-        <p>NasaToday &copy; {new Date().getFullYear()}</p>
+        <h4>TodayNasa, imagens novas disponibilizadas pela NASA</h4>
+        <p>TodayNasa &copy; {new Date().getFullYear()}</p>
       </div>
     </footer>
   )
