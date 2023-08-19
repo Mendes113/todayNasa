@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './Home.module.css';
 import ExemCorreto from '../../assets/example.jpg';
 
 const Home = () => {
   const [apodData, setApodData] = useState(null);
+  const exampleRef = useRef(null);
 
   useEffect(() => {
     getImgApi();
@@ -26,29 +26,38 @@ const Home = () => {
     });
   }
 
-  
+  const scrollToImageSection = () => {
+    exampleRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className={styles.homeContainer}>
       <div className={styles.backgroundImage}></div>
       <div className={styles.content}>
         <h1 className={styles.title}>Today Nasa</h1>
-        <p className={styles.description} >Atualiazações todo dia de  imagens da espaciais</p>
-        <Link to="/chat" className={styles.startButton}>Ir para imagem do dia</Link>
+        <p className={styles.description}>
+          Atualiazações todo dia de imagens da espaciais
+        </p>
+        <button className={styles.startButton} onClick={scrollToImageSection}>
+          Ir para imagem do dia
+        </button>
       </div>
-      <div className={styles.exampleContainer}>
+      <div className={styles.exampleContainer} ref={exampleRef}>
         <h1 className={styles.titleExem}>Imagem do dia</h1>
         <div className={styles.exampleImages}>
           <div className={styles.example}>
             {apodData && (
               <>
-                <img src={apodData.hdurl} alt="Imagem do dia da NASA" className={styles.exampleImage} />
+                <img
+                  src={apodData.hdurl}
+                  alt="Imagem do dia da NASA"
+                  className={styles.exampleImage}
+                />
                 <h2 className={styles.exampleTitle}>{apodData.title}</h2>
                 <p className={styles.exampleDescription}>{apodData.explanation}</p>
               </>
-                
             )}
-              <a
+            <a
               className={styles.startButton}
               download="imagem-do-dia.jpg"
               href={apodData && apodData.hdurl}
