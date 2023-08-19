@@ -33,7 +33,7 @@ const Home = () => {
       <div className={styles.backgroundImage}></div>
       <div className={styles.content}>
         <h1 className={styles.title}>Today Nasa</h1>
-        <p className={styles.description}>Atualiazações todo dia de imagens da espaciais</p>
+        <p className={styles.description} >Atualiazações todo dia de  imagens da espaciais</p>
         <Link to="/chat" className={styles.startButton}>Ir para imagem do dia</Link>
       </div>
       <div className={styles.exampleContainer}>
