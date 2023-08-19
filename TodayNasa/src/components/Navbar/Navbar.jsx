@@ -12,9 +12,9 @@ const Navbar = () => {
             <li>
                 <NavLink to="/" className={({isActive}) => (isActive ? styles.active : '')}>Home</NavLink>
             </li>
-            <li>
+            {/* <li>
                 <NavLink to="/space" className={({isActive}) => (isActive ? styles.active : '')}>Space</NavLink>
-            </li>
+            </li> */}
             <li>
                 <NavLink to="/mars" className={({isActive}) => (isActive ? styles.active : '')}>Mars</NavLink>
             </li>
