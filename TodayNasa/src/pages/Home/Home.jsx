@@ -36,7 +36,7 @@ const Home = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>Today Nasa</h1>
         <p className={styles.description}>
-          Atualiazações todo dia de imagens da espaciais
+          Atualiazações todos os dias de imagens da espaciais
         </p>
         <button className={styles.startButton} onClick={scrollToImageSection}>
           Ir para imagem do dia
