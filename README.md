@@ -23,3 +23,7 @@ This projects aims to undestand the use of APIs, in this context i've used the N
 - run deploy, use npm run dev
  ```
 <img src="./pageNasa.png">
+
+<img src="./pluto.png">
+
+<img src="./rover.png">
