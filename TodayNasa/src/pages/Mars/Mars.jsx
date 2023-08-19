@@ -56,7 +56,7 @@ const Mars = () => {
     <div className={styles.homeContainer}>
       <div className={styles.backgroundImage}></div>
       <div className={styles.content}>
-        <h1 className={styles.title}>Today Nasa</h1>
+        <h1 className={styles.title}>Today Rover</h1>
         <p className={styles.description}>Acompanhe as imagens do Rover Curiosity</p>
         <button className={styles.startButton} onClick={scrollToImageSection}>
           Ir para imagem do dia
