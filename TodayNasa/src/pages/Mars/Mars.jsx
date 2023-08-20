@@ -3,48 +3,34 @@ import { Link } from 'react-router-dom';
 import styles from './Mars.module.css';
 
 const Mars = () => {
-  const [roverImage, setRoverImage] = useState(null);
-  const [roverRhazImage, setRoverRhazImage] = useState(null);
+  const [roverImages, setRoverImages] = useState([]);
   const exampleRef = useRef(null);
 
   useEffect(() => {
-    fetchRoverImage();
-    fetchRoverRhazImage();
+    fetchRoverImages();
   }, []);
 
-  function fetchRoverImage() {
+  function fetchRoverImages() {
     const apiKey = 'gYVt2DldOL5QrQ4pKOEjO9afEAD7hXNwY2OrDeV2';
     const roverName = 'curiosity';
+    const cameraNames = ['fhaz', 'rhaz', 'chemcam', 'mast', 'mardi', 'navcam', 'pancam', 'mahli'];
 
-    fetch(
-      `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/latest_photos?api_key=${apiKey}&sol=1000&camera=fhaz`
+    Promise.all(
+      cameraNames.map(cameraName =>
+        fetch(
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/latest_photos?api_key=${apiKey}&sol=1000&camera=${cameraName}`
+        ).then(response => response.json())
+      )
     )
-      .then(response => response.json())
-      .then(data => {
-        if (data.latest_photos && data.latest_photos.length > 0) {
-          setRoverImage(data.latest_photos[0]);
-        }
+      .then(dataArray => {
+        const filteredImages = dataArray
+          .map(data => data.latest_photos[0])
+          .filter(image => image && !roverImages.some(existingImage => existingImage.camera.name === image.camera.name));
+
+        setRoverImages(filteredImages);
       })
       .catch(error => {
-        console.error('Error fetching rover image:', error);
-      });
-  }
-
-  function fetchRoverRhazImage() {
-    const apiKey = 'gYVt2DldOL5QrQ4pKOEjO9afEAD7hXNwY2OrDeV2';
-    const roverName = 'curiosity';
-
-    fetch(
-      `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/latest_photos?api_key=${apiKey}&sol=1000&camera=rhaz`
-    )
-      .then(response => response.json())
-      .then(data => {
-        if (data.latest_photos && data.latest_photos.length > 0) {
-          setRoverRhazImage(data.latest_photos[0]);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching rover image:', error);
+        console.error('Error fetching rover images:', error);
       });
   }
 
@@ -63,43 +49,23 @@ const Mars = () => {
         </button>
       </div>
       <div className={styles.exampleContainer} ref={exampleRef}>
-        <h1 className={styles.titleExem}>Imagem do rover Curiosity</h1>
+        <h1 className={styles.titleExem}>Imagens do rover Curiosity</h1>
         <div className={styles.exampleImages}>
-          <div className={styles.example}>
-            {roverImage && (
-              <>
-                <img
-                  src={roverImage.img_src}
-                  alt="Imagem do rover Curiosity em Marte"
-                  className={styles.exampleImage}
-                />
-                <h2 className={styles.exampleTitle}>{roverImage.rover.name}</h2>
-                <p className={styles.exampleDescription}>
-                  Data: {roverImage.earth_date}
-                  <br />
-                  {roverImage.camera.full_name}
-                </p>
-              </>
-            )}
-          </div>
-          <div className={styles.example}>
-            {roverRhazImage && (
-              <>
-                <img
-                  src={roverRhazImage.img_src}
-                  alt="Imagem do rover Curiosity em Marte"
-                  className={styles.exampleImage}
-                />
-                <h2 className={styles.exampleTitle}>{roverRhazImage.rover.name}</h2>
-                <p className={styles.exampleDescription}>
-                  Data: {roverRhazImage.earth_date}
-                  <br />
-                  {roverRhazImage.camera.full_name}
-                </p>
-              </>
-            )}
-          </div>
-          {/* ... outros exemplos ... */}
+          {roverImages.map((roverImage, index) => (
+            <div className={styles.example} key={index}>
+              <img
+                src={roverImage.img_src}
+                alt={`Imagem do rover Curiosity em Marte (${roverImage.camera.full_name})`}
+                className={styles.exampleImage}
+              />
+              <h2 className={styles.exampleTitle}>{roverImage.rover.name}</h2>
+              <p className={styles.exampleDescription}>
+                Data: {roverImage.earth_date}
+                <br />
+                {roverImage.camera.full_name}
+              </p>
+            </div>
+          ))} 
         </div>
       </div>
     </div>
