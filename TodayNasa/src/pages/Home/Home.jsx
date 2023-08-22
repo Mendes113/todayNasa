@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './Home.module.css';
-import ExemCorreto from '../../assets/example.jpg';
+
 
 const Home = () => {
   const [apodData, setApodData] = useState(null);
