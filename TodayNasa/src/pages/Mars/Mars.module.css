@@ -74,6 +74,7 @@
   font-size: 2.5rem;
   color: rgba(0, 0, 0, 0.795);
   margin-bottom: 1rem;
+  margin-top: 5rem;
  
 }
 
@@ -88,11 +89,15 @@
 .example {
   text-align: center;
   margin: 0 1rem;
+  margin-top: 1rem; /* Add this line to create space above the image */
 }
 
 .exampleImage {
   width: 900px;
   height: 800px;
+  text-align: center;
+  margin: 0 1rem;
+  margin-top: 10rem; /* Add this line to create space above the image */
 }
 
 .exampleTitle {
@@ -189,6 +194,13 @@
   font-size: 28px;
 }
 
+.exampleRow{
+  display: block;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 /* 1024px ou 1260px*/
 @media screen and (max-width: 1260px) {
   
@@ -207,6 +219,10 @@
 
   .exampleImages {
     display: block;
+    margin-top: 30px;
+  }
+  .example{
+    margin-top: 30px;
   }
 
   .exampleContainer .titleExem {

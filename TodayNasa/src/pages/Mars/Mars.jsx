@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+
 import styles from './Mars.module.css';
 
 const Mars = () => {
@@ -51,22 +51,33 @@ const Mars = () => {
       <div className={styles.exampleContainer} ref={exampleRef}>
         <h1 className={styles.titleExem}>Imagens do rover Curiosity</h1>
         <div className={styles.exampleImages}>
-          {roverImages.map((roverImage, index) => (
-            <div className={styles.example} key={index}>
-              <img
-                src={roverImage.img_src}
-                alt={`Imagem do rover Curiosity em Marte (${roverImage.camera.full_name})`}
-                className={styles.exampleImage}
-              />
-              <h2 className={styles.exampleTitle}>{roverImage.rover.name}</h2>
-              <p className={styles.exampleDescription}>
-                Data: {roverImage.earth_date}
-                <br />
-                {roverImage.camera.full_name}
-              </p>
-            </div>
-          ))} 
+  {roverImages.reduce((rows, image, index) => {
+    if (index % 2 === 0) {
+      rows.push([image]);
+    } else {
+      rows[rows.length - 1].push(image);
+    }
+    return rows;
+  }, []).map((row, rowIndex) => (
+    <div className={styles.exampleRow} key={rowIndex}>
+      {row.map((roverImage, imageIndex) => (
+        <div className={styles.example} key={imageIndex}>
+          <img
+            src={roverImage.img_src}
+            alt={`Imagem do rover Curiosity em Marte (${roverImage.camera.full_name})`}
+            className={styles.exampleImage}
+          />
+          <h2 className={styles.exampleTitle}>{roverImage.rover.name}</h2>
+          <p className={styles.exampleDescription}>
+            Data: {roverImage.earth_date}
+            <br />
+            {roverImage.camera.full_name}
+          </p>
         </div>
+      ))}
+    </div>
+  ))}
+</div>
       </div>
     </div>
   );
