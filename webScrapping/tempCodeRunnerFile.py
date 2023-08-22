@@ -1,0 +1,1 @@
+driver.wait_for_page_to_load(3)
