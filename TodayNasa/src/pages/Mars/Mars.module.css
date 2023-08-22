@@ -310,6 +310,15 @@
   .startButton {
     width: 100%;
   }
+
+  .exampleImage {
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    margin: 0 1rem;
+    margin-top: 10rem; /* Add this line to create space above the image */
+  }
+  
 }
 
 /* 531px ou */
@@ -328,7 +337,7 @@
   }
 
   .exampleContainer .exampleImages {
-    width: 100%;
+    width: 90%;
   }
 
   .exampleContainer .exampleImages .example img { /* imagens exemplo correto e incorreto*/
@@ -399,5 +408,13 @@
     width: 70%;
     margin-left: 3.2em;
     margin-right: 0;
+  }
+
+  .exampleImage {
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    margin: 0 1rem;
+    margin-top: 10rem; /* Add this line to create space above the image */
   }
 }
