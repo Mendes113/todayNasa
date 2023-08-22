@@ -58,6 +58,7 @@ const Home = () => {
               </>
             )}
             <a
+              id='downloadBtn'
               className={styles.startButton}
               download="imagem-do-dia.jpg"
               href={apodData && apodData.hdurl}
