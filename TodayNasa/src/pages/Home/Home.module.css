@@ -317,9 +317,9 @@
   }
 
   .exampleContainer .exampleImages .example img { /* imagens exemplo correto e incorreto*/
-    width: 80%;
+    width: 60%;
     /* width: 400px; */
-    height: 300px;
+    height: 200px;
   }
 
   .backgroundImage {
