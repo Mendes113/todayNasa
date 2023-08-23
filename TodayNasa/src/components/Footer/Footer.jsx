@@ -14,7 +14,7 @@ const Footer = () => {
         <ul className={styles.links_list}>
           <li>
             <NavLink
-              to="/"
+              to="/todayNasa"
               className={({ isActive }) => (isActive ? styles.active : '')}
             >
               Home
