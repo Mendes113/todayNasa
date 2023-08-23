@@ -22,18 +22,18 @@ const Footer = () => {
           </li>
           <li>
             <NavLink
-              to="/about"
+              to="/Mars"
               className={({ isActive }) => (isActive ? styles.active : '')}
             >
-              Sobre
+              Mars
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/contact"
+              to="/about"
               className={({ isActive }) => (isActive ? styles.active : '')}
             >
-              Contato
+              About
             </NavLink>
           </li>
         </ul>
