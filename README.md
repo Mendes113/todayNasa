@@ -27,3 +27,22 @@ This projects aims to undestand the use of APIs, in this context i've used the N
 <img src="./pluto.png">
 
 <img src="./rover.png">
+
+
+## Telegram Bot
+
+For receive directly the images instead of acessing the site, you can use the bot on telegram. Unfortunately, the bot requires to be running on a pc or server. 
+While it's running you can interact with it using:
+```sh
+/start
+```
+
+click on the button "Vamos começar" that means Let's start. 
+
+Another problem is that the description given by NASA API is in english,although the basic interaction in the chat is in portuguese.
+
+<img src="./bot.png">
+<img src="./botimg.jpg">
+
+
+
